@@ -32,6 +32,8 @@ const createMyNum = () => {
     iArr = [i1, i2, i3];
 };
 
+const numCheck =
+    document.getElementById("numCheck");
 numCheck.addEventListener("click", () => {
     createMyNum();
     if (i1 === i2 || i1 === i3 || i2 === i3) {
