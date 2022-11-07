@@ -36,17 +36,24 @@ const numCheck =
     document.getElementById("numCheck");
 numCheck.addEventListener("click", () => {
     createMyNum();
-    // while (i1 === i2 || i1 === i3 || i2 === i3) {
     if (i1 === i2 || i1 === i3 || i2 === i3) {
         alert(
             "3桁の数字はすべて異なる数字で指定してください"
         );
+        answerNum.textContent = "";
+        answerNum.value = "";
+        iArr.splice(0, 3);
+        // numCheck.addEventListener(
+        //     "click",
+        //     (event) => {
+        event.stopImmediatePropagation();
+        //         }
+        //     );
     }
-    answerNum.textContent = "";
-    answerNum.value = "";
-    iArr.splice(0, 3);
-    createMyNum();
+});
 
+numCheck.addEventListener("click", () => {
+    // createMyNum();
     createCpNum();
     if (c1 === c2 || c1 === c3 || c2 === c3) {
         createCpNum();
@@ -89,3 +96,6 @@ numCheck.addEventListener("click", () => {
         numCheck.disabled = true;
     }
 });
+// answerNum.textContent = "";
+// answerNum.value = "";
+// iArr.splice(0, 3);
