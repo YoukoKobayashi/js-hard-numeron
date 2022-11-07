@@ -36,19 +36,18 @@ const numCheck =
     document.getElementById("numCheck");
 numCheck.addEventListener("click", () => {
     createMyNum();
+    // while (i1 === i2 || i1 === i3 || i2 === i3) {
     if (i1 === i2 || i1 === i3 || i2 === i3) {
         alert(
             "3桁の数字はすべて異なる数字で指定してください"
         );
-        //if (!alert("OK")) {
-        answerNum.value = "";
-        createMyNum();
-        // iArr.splice(0, 3);
-        console.log(iArr);
-        //}
     }
-    createCpNum();
+    answerNum.textContent = "";
+    answerNum.value = "";
+    iArr.splice(0, 3);
+    createMyNum();
 
+    createCpNum();
     if (c1 === c2 || c1 === c3 || c2 === c3) {
         createCpNum();
     }
@@ -81,10 +80,11 @@ numCheck.addEventListener("click", () => {
     cnt -= 1;
     remainTurn.textContent = `あと残り${cnt}回です`;
 
-    if (!alert("OK")) {
-        //alertクリックの戻り値→undefined, !alert=true
-        answerNum.value = "";
-    }
+    // if (!alert("OK")) {
+    // alertクリックの戻り値→undefined, !alert=true
+    // alertのOKクリック時の処理
+    answerNum.value = "";
+    // }
     if (cnt === 0) {
         numCheck.disabled = true;
     }
