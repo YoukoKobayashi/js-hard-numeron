@@ -61,9 +61,7 @@ numCheck.addEventListener("click", () => {
     console.log(cArr);
 
     // 二次元配列にする
-    let icArr = [];
-    icArr.push(iArr);
-    icArr.push(cArr);
+    let icArr = [iArr, cArr];
     // console.log(icArr);
 
     let eat = 0;
